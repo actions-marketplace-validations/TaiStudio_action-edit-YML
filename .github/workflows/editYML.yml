@@ -1,4 +1,4 @@
-name: Notification on push
+name: Edit Files
 
 on: push
     
@@ -9,4 +9,8 @@ jobs:
     - name: Edit Files
       uses: TaiStudio/action-edit-YML@main
       with:
-        who-to-greet: "['bonjour', 'comment', 'vas', 'tu', '?']"
+        type: 'single'
+        files: "['./example/old.yml']"
+        newfiles: "['./example/new.yml']"
+        replace: "['-']"
+        replaceFor: "['.']"
