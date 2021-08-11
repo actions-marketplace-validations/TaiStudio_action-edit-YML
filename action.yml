@@ -1,0 +1,9 @@
+name: "Action edit YML files"
+description: "Edit YML file in Github Actions."
+author: "Tai Studio"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: circle
+  color: black

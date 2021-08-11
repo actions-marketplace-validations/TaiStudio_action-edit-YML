@@ -1,0 +1,31 @@
+{
+  "name": "@taistudio/action-edit-yml",
+  "version": "1.0.0",
+  "description": "An github action for edit YML files.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaiStudio/action-edit-YML.git"
+  },
+  "keywords": [
+    "tai-studio",
+    "edit",
+    "yml",
+    "github",
+    "actions"
+  ],
+  "author": "Tai Studio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaiStudio/action-edit-YML/issues"
+  },
+  "homepage": "https://github.com/TaiStudio/action-edit-YML#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
