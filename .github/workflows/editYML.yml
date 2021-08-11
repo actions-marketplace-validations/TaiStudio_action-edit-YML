@@ -9,4 +9,4 @@ jobs:
     - name: Edit Files
       uses: TaiStudio/action-edit-YML@main
       with:
-        who-to-greet: ['bonjour', 'comment', 'vas', 'tu', '?']
+        who-to-greet: "['bonjour', 'comment', 'vas', 'tu', '?']"
