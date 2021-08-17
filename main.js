@@ -12,6 +12,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const yaml = require('js-yaml');
 const fs = require('fs');
+const path = require('path');
 
 try {
     const type = core.getInput('type');
@@ -41,7 +42,7 @@ function single(files, newfiles, replace, replaceFor){
 
 function editor(file, strPARAM, find, replace){
     try {
-        const doc = yaml.load(fs.readFileSync('./dist/latest.yml', 'utf8'));
+        const doc = yaml.load(fs.readFileSync(path.join(__dirname, './dist/latest.yml'), 'utf8'));
         // const doc = yaml.load(fs.readFileSync(file, 'utf8'));
         doc['files'][0]['url'] = replaceALL(doc['files'][0]['url'], '-', '.');
         // doc['files'][0]['url'] = replaceALL(doc['files'][0]['url'], find, replace);
