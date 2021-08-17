@@ -10,8 +10,7 @@ jobs:
       uses: TaiStudio/action-edit-YML@main
       with:
         type: 'single'
-        files: "./example/old.yml"
-        newfiles: "./example/new.yml"
+        files: "./dist/lastest.yml"
         elementSTR: "['files'][0]['url']"
         replace: "'-'"
         replaceFor: "'.'"
