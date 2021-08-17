@@ -13,18 +13,19 @@ const github = require('@actions/github');
 const yaml = require('js-yaml');
 const fs = require('fs');
 
-
-
 try {
-    const nameToGreet = core.getInput('who-to-greet');
     const type = core.getInput('type');
-    console.log(`Hello ${nameToGreet}!`, typeof nameToGreet);
+    const files = core.getInput('files');
+    const newfiles = core.getInput('newfiles');
+    const replace = core.getInput('replace');
+    const replaceFor = core.getInput('replaceFor');
 
     switch(type){
         case 'single':
-            single();
+            single(files, newfiles, replace, replaceFor);
             break;
         case 'multiple':
+            console.log("this function it's in working progress !");
             break;
         default:
             single();
@@ -34,8 +35,8 @@ try {
     core.setFailed(error.message);
 }
 
-function single(){
-    console.log('bite');
+function single(files, newfiles, replace, replaceFor){
+    editor(files, newfiles, replace, replaceFor);
 }
 
 function editor(file, strPARAM, find, replace){
