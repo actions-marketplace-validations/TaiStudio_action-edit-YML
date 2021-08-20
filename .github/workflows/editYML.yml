@@ -12,5 +12,5 @@ jobs:
         type: 'single'
         files: "./example/lastest.yml"
         elementSTR: "['files'][0]['url']"
-        replace: "'-'"
-        replaceFor: "'.'"
+        replace: "-"
+        replaceFor: "."
