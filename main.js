@@ -28,7 +28,7 @@ try {
             console.log("this function it's in working progress !");
             break;
         default:
-            single();
+            single(files, replace, replaceFor);
 
     }
 } catch (error) {
@@ -43,6 +43,7 @@ function editor(file, strPARAM, find, replace){
     try {
         const doc = yaml.load(fs.readFileSync(file, 'utf8'));
         doc['files'][0]['url'] = replaceALL(strPARAM, find, replace);
+        doc['path'] = replaceALL(strPARAM, find, replace);
         var newFile = yaml.dump(doc);
         fs.writeFileSync(file, newFile, 'utf8');
     } catch (e) {
