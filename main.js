@@ -49,6 +49,7 @@ function multiple(files, replace, replaceFor){
 function editor(file, strPARAM, find, replace){
     file = path.join(__dirname, file);
     console.log(file, process.env.GITHUB_PATH);
+    console.log(process.env);
     try {
         const doc = yaml.load(fs.readFileSync(file, 'utf8'));
         doc['files'][0]['url'] = replaceALL(strPARAM, find, replace);
