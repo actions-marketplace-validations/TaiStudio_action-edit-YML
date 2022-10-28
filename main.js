@@ -37,13 +37,23 @@ try {
 }
 
 function single(files, replace, replaceFor){
-    editor(files, replace, replaceFor);
+    if(typeof files == "object"){
+        multiple(files, replace, replaceFor);
+    }
+    else{
+        editor(files, replace, replaceFor);
+    }
 }
 
 function multiple(files, replace, replaceFor){
-    files.forEach(file => {
-        single(file, replace, replaceFor);
-    });
+    if(typeof files == "string"){
+        single(files, replace, replaceFor);
+    }
+    else{
+        files.forEach(file => {
+            single(file, replace, replaceFor);
+        });
+    }
 }
 
 function editor(file, strPARAM, find, replace){
