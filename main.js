@@ -13,6 +13,7 @@ const github = require('@actions/github');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 try {
     const type = core.getInput('type');
