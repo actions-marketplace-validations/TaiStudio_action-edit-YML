@@ -47,8 +47,8 @@ function multiple(files, replace, replaceFor){
 }
 
 function editor(file, strPARAM, find, replace){
-    file = path.join(__dirname, file);
-    console.log(file, process.env.GITHUB_PATH);
+    file = path.join(process.env.RUNNER_WORKSPACE, file);
+    console.log(file, process.env.RUNNER_WORKSPACE);
     console.log(process.env);
     try {
         const doc = yaml.load(fs.readFileSync(file, 'utf8'));
