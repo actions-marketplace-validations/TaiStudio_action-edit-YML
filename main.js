@@ -50,6 +50,7 @@ function editor(file, strPARAM, find, replace){
     file = path.join(process.env.RUNNER_WORKSPACE, file);
     console.log(file, process.env.RUNNER_WORKSPACE);
     console.log(process.env);
+    console.log(fs.readdirSync(process.env.RUNNER_WORKSPACE));
     try {
         const doc = yaml.load(fs.readFileSync(file, 'utf8'));
         doc['files'][0]['url'] = replaceALL(strPARAM, find, replace);
