@@ -25,7 +25,7 @@ try {
             single(files, replace, replaceFor);
             break;
         case 'multiple':
-            console.log("this function it's in working progress !");
+            multiple(files, replace, replaceFor);
             break;
         default:
             single(files, replace, replaceFor);
@@ -39,7 +39,15 @@ function single(files, replace, replaceFor){
     editor(files, replace, replaceFor);
 }
 
+function multiple(files, replace, replaceFor){
+    files.forEach(file => {
+        single(file, replace, replaceFor);
+    });
+}
+
 function editor(file, strPARAM, find, replace){
+    file = path.join(__dirname, file);
+    console.log(file);
     try {
         const doc = yaml.load(fs.readFileSync(file, 'utf8'));
         doc['files'][0]['url'] = replaceALL(strPARAM, find, replace);
